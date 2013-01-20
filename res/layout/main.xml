@@ -25,13 +25,15 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_marginRight="5dp" />
+            android:layout_marginRight="5dp"
+            android:visibility="invisible"/>
 
     <TextView
             android:id="@+id/processedBytes"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="-"
+            android:visibility="invisible"
             />
 
     <TextView
@@ -39,6 +41,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="-"
+            android:visibility="invisible"
             />
 </LinearLayout>
 

@@ -8,6 +8,7 @@
     <string name="btn_check_size">Check size</string>
     <string name="btn_parse_xml">Parse XML</string>
     <string name="btn_stop_parse">Stop current parsing</string>
+    <string name="btn_ok">OK</string>
 
     <string name="parsed_offers">Parsed offers</string>
     <string name="bytes_processed">Bytes processed</string>

@@ -34,7 +34,7 @@ public class ParsingService {
 
     public Integer getFileSize(final URL url) throws IOException {
         int length = -1;
-        if ("HTTP".equalsIgnoreCase(url.getProtocol())) {
+        if ("http".equalsIgnoreCase(url.getProtocol())) {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 length = connection.getContentLength();
@@ -47,7 +47,7 @@ public class ParsingService {
         return length == -1 ? null : length;
     }
 
-    public ParsingProcessInfo parseIrrAdsXml(final URL xmlUrl) throws ParsingException {
+    public ParsingProcessInfo parseIrrAdsXml(final URL xmlUrl) {
         final ParsingProcessInfo processInfo = new ParsingProcessInfo();
 
         try {

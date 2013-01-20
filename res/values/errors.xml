@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="invalid_url">Invalid URL</string>
+    <string name="file_not_found">File was not found</string>
+    <string name="bad_xml">XML is not well-formed</string>
+    <string name="failed_connect_to_url">Failed connect to URL</string>
+    <string name="bad_protocol">Bad protocol. Should be HTTP(S) or FTP</string>
+
+    <string name="error_dlg_title">Error</string>
+</resources>
