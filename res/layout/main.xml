@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <EditText android:id="@+id/pathToXmlFile"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:editable="true"
+              android:cursorVisible="true"
+              android:inputType="textUri"
+              android:hint="@string/path_to_xml"
+              android:text="http://avpisarev.org/test/irr_ads_norm.xml"/>
+
+
+    <Button android:id="@+id/parseAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="@string/btn_parse_xml"/>
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_marginRight="5dp" />
+
+    <TextView
+            android:id="@+id/processedBytes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="-"
+            />
+
+    <TextView
+            android:id="@+id/parsedOffers"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="-"
+            />
+</LinearLayout>
+
