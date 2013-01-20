@@ -55,6 +55,8 @@ public class IrrAdsXmlParser {
     private final ArrayList<IrrAdsParserListener> listeners =
             new ArrayList<IrrAdsParserListener>();
 
+    private volatile boolean needToStop;
+
     public IrrAdsXmlParser() {
     }
 
@@ -78,6 +80,10 @@ public class IrrAdsXmlParser {
         listeners.add(listener);
     }
 
+    public void stopParsing() {
+        needToStop = true;
+    }
+
     public void parse(InputStream inputStream) throws IOException, XmlPullParserException {
         XmlPullParser parser = Xml.newPullParser();
 
@@ -93,6 +99,11 @@ public class IrrAdsXmlParser {
         Offer offer = null;
 
         while (!done && eventType != XmlPullParser.END_DOCUMENT) {
+            if (needToStop) {
+                fireParsingStopped();
+                return;
+            }
+
             fireProcessedBytes(wrappedStream.getTotalBytesRead());
 
             switch (eventType) {
@@ -162,6 +173,12 @@ public class IrrAdsXmlParser {
     private void fireCatalogParsed(AutoCatalog catalog) {
         for (IrrAdsParserListener listener: listeners) {
             listener.onCatalogParsed(catalog);
+        }
+    }
+
+    private void fireParsingStopped() {
+        for (IrrAdsParserListener listener: listeners) {
+            listener.onParsingStop();
         }
     }
 }

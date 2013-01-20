@@ -16,4 +16,6 @@ public interface IrrAdsParserListener {
 
     void onCatalogFound(AutoCatalog autoCatalog);
 
+    void onParsingStop();
+
 }

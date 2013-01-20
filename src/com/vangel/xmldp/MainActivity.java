@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
                 } else {
                     stopCurrentParsing(view);
                     etPathToXmlFile.setEnabled(true);
-                    hideProgressInfo();
+                    //hideProgressInfo();
 
                     bParseAction.setTag(START_PARSING);
                     bParseAction.setText(R.string.btn_parse_xml);
@@ -183,7 +183,7 @@ public class MainActivity extends Activity {
     }
 
     public void stopCurrentParsing(View view) {
-
+        ParsingService.getInstance().stopCurrentParsing();
     }
 
     void showError(String message) {

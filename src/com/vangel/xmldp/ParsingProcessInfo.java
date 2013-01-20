@@ -24,13 +24,14 @@ public class ParsingProcessInfo implements IrrAdsParserListener {
 
     private AtomicBoolean done;
 
-    private Long catalogId;
+    private AtomicBoolean canceled;
 
     public ParsingProcessInfo() {
         processedBytes = new AtomicLong(0L);
         offerProcessed = new AtomicInteger(0);
         wasError = new AtomicBoolean(false);
         done = new AtomicBoolean(false);
+        canceled = new AtomicBoolean(false);
     }
 
     public Integer getFileSize() {
@@ -62,15 +63,24 @@ public class ParsingProcessInfo implements IrrAdsParserListener {
     @Override
     public void onCatalogParsed(AutoCatalog autoCatalog) {
         done.set(true);
-        catalogId = autoCatalog.getId();
     }
 
     @Override
     public void onCatalogFound(AutoCatalog autoCatalog) {
     }
 
+    @Override
+    public void onParsingStop() {
+        done.set(true);
+        canceled.set(true);
+    }
+
     public boolean isDone() {
         return done.get();
+    }
+
+    public boolean isCanceled() {
+        return canceled.get();
     }
 
     public void setError(Exception ex) {

@@ -21,6 +21,8 @@ public class ParsingService {
 
     private IrrAdsDao irrAdsDao;
 
+    private IrrAdsXmlParser currentParser;
+
     public ParsingService() {
     }
 
@@ -60,6 +62,8 @@ public class ParsingService {
         xmlParser.addListener(new IrrAdsSaver(irrAdsDao));
         xmlParser.addListener(processInfo);
 
+        currentParser = xmlParser;
+
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -81,5 +85,11 @@ public class ParsingService {
 
     public Cursor getCatalogOffers(Long catalogId) {
         return irrAdsDao.getCatalogOffers(catalogId);
+    }
+
+    public void stopCurrentParsing() {
+        if (currentParser != null) {
+            currentParser.stopParsing();
+        }
     }
 }
