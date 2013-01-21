@@ -1,6 +1,7 @@
-package com.vangel.xmldp;
+package com.vangel.xmldp.xml;
 
 import android.util.Xml;
+import com.vangel.xmldp.InputStreamSizeWrapper;
 import com.vangel.xmldp.entities.AutoCatalog;
 import com.vangel.xmldp.entities.Offer;
 import com.vangel.xmldp.utils.StringUtils;

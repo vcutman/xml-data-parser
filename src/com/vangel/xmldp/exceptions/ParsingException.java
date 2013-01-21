@@ -1,4 +1,4 @@
-package com.vangel.xmldp;
+package com.vangel.xmldp.exceptions;
 
 /**
  * @author VAngeL

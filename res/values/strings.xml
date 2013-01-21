@@ -4,6 +4,9 @@
     <string name="path_to_xml">Path to XML file</string>
     <string name="unknown">Unknown</string>
     <string name="auto_catalog">Auto Catalog</string>
+    <string name="created">Created</string>
+    <string name="host">Host</string>
+    <string name="empty">-</string>
 
     <string name="btn_check_size">Check size</string>
     <string name="btn_parse_xml">Parse XML</string>

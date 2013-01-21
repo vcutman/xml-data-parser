@@ -2,6 +2,7 @@ package com.vangel.xmldp;
 
 import com.vangel.xmldp.entities.AutoCatalog;
 import com.vangel.xmldp.entities.Offer;
+import com.vangel.xmldp.xml.IrrAdsParserListener;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;

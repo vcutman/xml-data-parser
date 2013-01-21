@@ -1,4 +1,4 @@
-package com.vangel.xmldp;
+package com.vangel.xmldp.xml;
 
 import com.vangel.xmldp.entities.AutoCatalog;
 import com.vangel.xmldp.entities.Offer;

@@ -3,6 +3,7 @@ package com.vangel.xmldp;
 import com.vangel.xmldp.dao.IrrAdsDao;
 import com.vangel.xmldp.entities.AutoCatalog;
 import com.vangel.xmldp.entities.Offer;
+import com.vangel.xmldp.xml.IrrAdsParserListenerAdapter;
 
 /**
  * @author VAngeL

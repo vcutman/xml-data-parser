@@ -6,6 +6,7 @@ import android.util.Log;
 import com.vangel.xmldp.dao.IrrAdsDao;
 import com.vangel.xmldp.dao.IrrAdsDaoImpl;
 import com.vangel.xmldp.entities.AutoCatalog;
+import com.vangel.xmldp.xml.IrrAdsXmlParser;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -79,17 +80,17 @@ public class ParsingService {
         return processInfo;
     }
 
+    public void stopCurrentParsing() {
+        if (currentParser != null) {
+            currentParser.stopParsing();
+        }
+    }
+
     public AutoCatalog getLastCatalog() {
         return irrAdsDao.findLastCatalog();
     }
 
     public Cursor getCatalogOffers(Long catalogId) {
         return irrAdsDao.getCatalogOffers(catalogId);
-    }
-
-    public void stopCurrentParsing() {
-        if (currentParser != null) {
-            currentParser.stopParsing();
-        }
     }
 }
