@@ -5,13 +5,12 @@
               android:layout_height="fill_parent"
         >
     <EditText android:id="@+id/pathToXmlFile"
-              android:layout_width="wrap_content"
+              android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:editable="true"
               android:cursorVisible="true"
               android:inputType="textUri"
-              android:hint="@string/path_to_xml"
-              android:text="http://avpisarev.org/test/irr_ads_norm.xml"/>
+              android:hint="@string/path_to_xml"/>
 
 
     <Button android:id="@+id/parseAction"

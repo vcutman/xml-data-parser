@@ -22,6 +22,8 @@ import java.net.URLConnection;
 public class MainActivity extends Activity {
     private static final String LOG_TAG = "MainActivity";
 
+    private static final String PATH_TO_XML_STATE_NAME = "pathToXml";
+
     private static final Integer START_PARSING = 1;
     private static final Integer STOP_PARSING = 2;
 
@@ -48,8 +50,21 @@ public class MainActivity extends Activity {
         tProcessedBytes = (TextView) findViewById(R.id.processedBytes);
 
         initParseActionButton();
-
         ParsingService.getInstance().init(this);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putString(PATH_TO_XML_STATE_NAME, etPathToXmlFile.getText().toString());
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        etPathToXmlFile.setText(savedInstanceState.getString(PATH_TO_XML_STATE_NAME));
     }
 
     private void initParseActionButton() {
