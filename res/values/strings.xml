@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">xml-data-parser</string>
+    <string name="app_name">IRR XML Parser</string>
     <string name="path_to_xml">Path to XML file</string>
     <string name="unknown">Unknown</string>
     <string name="auto_catalog">Auto Catalog</string>

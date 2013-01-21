@@ -10,6 +10,7 @@
               android:editable="true"
               android:cursorVisible="true"
               android:inputType="textUri"
+              android:longClickable="true"
               android:hint="@string/path_to_xml"/>
 
 

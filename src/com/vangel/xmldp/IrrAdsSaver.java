@@ -17,10 +17,6 @@ public class IrrAdsSaver extends IrrAdsParserListenerAdapter {
     }
 
     @Override
-    public void onProcessedBytes(long sizeInBytes) {
-    }
-
-    @Override
     public void onOfferParsed(Offer offer) {
         Long id = dao.saveOffer(offer);
         offer.setId(id);

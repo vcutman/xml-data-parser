@@ -12,15 +12,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 /**
  * @author VAngeL
  * date: 20.01.13
  */
 public class IrrAdsXmlParser {
-    private static final Logger logger = Logger.getLogger(IrrAdsXmlParser.class.getName());
-
     private static final String TAG_AUTO_CATALOG = "auto-catalog";
     private static final String TAG_CREATION_DATE = "creation-date";
     private static final String TAG_HOST = "host";
